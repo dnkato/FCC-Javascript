@@ -1,3 +1,9 @@
+/**
+ * Convert the given number into a roman numeral.
+ * 
+ * @param {number} num A number
+ * @return {string} Roman numneral value
+ */
 function convertToRoman(num) {
 
     function digitStr(num0to9, onechar, fivechar, tenchar) {
@@ -17,6 +23,8 @@ function convertToRoman(num) {
         return str;
     }
     
+    if (isNaN(num)) return "";
+
     let str = "";
   
     /* Thousands */
