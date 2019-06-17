@@ -49,7 +49,6 @@ function checkCashRegister(price, cash, cid) {
     // compute the change due
     var totalCashInDrawer = cashTotal(cashInDrawer);
     var changeDue = +((cash - price).toFixed(2)); 
-    //console.log("<1> Change Due = " + changeDue + ", Cash in Drawer = " + totalCashInDrawer);
   
     // check for early exit conditions
     if (changeDue > totalCashInDrawer) {
@@ -61,20 +60,25 @@ function checkCashRegister(price, cash, cid) {
     // figure out how much change to give
     var changeArr = [];
     var changeGiven = 0;
+    // Iterate from highest to lowest currency values: one hundred, fifty, twenty, etc.
     for (let curr in currencyValue) {
+        // If there are no bills of this type of currency in the drawer, continue to the next currency
         if (!cashInDrawer[curr]) continue;
+        // If the currency value is less than the change still due,
+        // figure out how much of this type of currency we are giving back in change.
         if ((currencyValue[curr] <= changeDue) && (cashInDrawer[curr] > 0)) {
+            // figure out the amount based on what we need and what's in the drawer
             let amt = currencyValue[curr]*Math.trunc(changeDue/currencyValue[curr]);
             amt = Math.min(cashInDrawer[curr], amt);
-            changeDue = +((changeDue - amt).toFixed(2));
-            changeGiven = +((changeGiven + amt).toFixed(2));
+            // update the running totals, push the change onto the array
+            changeDue = +((changeDue - amt).toFixed(2));     // Round to two digits
+            changeGiven = +((changeGiven + amt).toFixed(2)); // Round to two digits
             changeArr.push([ curr, amt ]);
-            //console.log("    >>>>>>> " + curr +": " + amt); 
+            // if the change due is now zero, we are done!
             if (changeDue === 0) break;
         }
     }
   
-    //console.log("<2> Change Due = " + changeDue + ", Change Given = " + changeGiven) 
     if (changeDue === 0) {
       return { status: "OPEN", change: changeArr };
     } else {
