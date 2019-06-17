@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Palindrome Checker</Title>
+        <script src="palindrome.js"></script>
+    </head>
+    <body>
+        <h1>Palindrome Checker</h1>
+        <input id="input" type=text oninput="document.getElementById('result').innerText=palindrome(document.getElementById('input').value)"></input>
+        <button onclick="document.getElementById('input').value = ''">Clear</button>
+        <div>Result: <span id="result"></span></div>
+    </body>
+
+    <script>
+    function test() {
+        document.getElementById('result').innerText=palindrome(document.getElementById('input').value);
+    }
+    </script>
+</html>

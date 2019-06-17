@@ -1,3 +1,10 @@
+/** 
+ * Checks if the given string is a palindrome
+ * 
+ * @param   {string} str The string to be tested
+ * @returns {boolean} True if the given string is a palindrome. Otherwise, false.
+ * 
+ */
 function palindrome(str) {
   
     var temp = str.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
