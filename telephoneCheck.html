@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Telephone Check</title>
+        <script src="telephoneCheck.js"></script>
+    </head>
+    <body>
+        <h1> Telephone Check</h1>
+        <input type="text" id="input" oninput="test()">
+        <button onclick="document.getElementById('input').value=''">Clear</button>
+    </body>
+    <script>
+        function test() {
+            var inputEl = document.getElementById('input');
+            if (telephoneCheck(inputEl.value)) {
+                inputEl.style.backgroundColor="PaleGreen";
+            } else {
+                inputEl.style.backgroundColor="Pink";
+            }
+        }
+    </script>
+</html>
