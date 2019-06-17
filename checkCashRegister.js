@@ -1,3 +1,12 @@
+/**
+ * Cash Register drawer function
+ * reference: https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register
+ *  
+ * @param {number} price    The purchase price
+ * @param {number} cash     The cash payment
+ * @param {object} cid      The cash-in-drawer
+ * @return {object}         status, change
+ */
 function checkCashRegister(price, cash, cid) {
 
     // Here is your change, ma'am.
