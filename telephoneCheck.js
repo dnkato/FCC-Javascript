@@ -1,3 +1,9 @@
+/**
+ * Checks if a passed string looks like a valid US phone number
+ * 
+ * @param {string} str  input string to be tested
+ * @return {boolean}   true if str contains a valid US phone number
+ */
 function telephoneCheck(str) {
     // Good luck!
     //console.log(str);
