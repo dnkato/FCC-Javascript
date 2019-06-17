@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caesars Cipher</title>
+        <script src="rot13.js"></script>
+    </head>
+    <body>
+        <h1>Caesars Cipher</h1>
+        <input type="text" id="input" value="LBH QVQ VG!"></input>
+        <button onclick="test()">Decode</button>
+        <button onclick="document.getElementById('input').value=''">Clear</button>
+    </body>
+    <script>
+        function test() {
+            alert(rot13(document.getElementById('input').value));
+        }
+    </script>
+</html>

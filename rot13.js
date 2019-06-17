@@ -1,3 +1,10 @@
+/**
+ * Decodes a string that has been encoded using a Caesar cipher, where the
+ * values of the letters have been shifted by 13 places.
+ * 
+ * @param {string} str Encoded string
+ * @return {string}    Decoded string
+ */
 function rot13(str) { // LBH QVQ VG!
   
     const ACODE = 65;
@@ -28,7 +35,7 @@ function rot13(str) { // LBH QVQ VG!
       return outArr.join('');
     }
   
-    return shiftString(str, -13);
+    return shiftString(str.toUpperCase(), -13);
   }
   
   // Change the inputs below to test
